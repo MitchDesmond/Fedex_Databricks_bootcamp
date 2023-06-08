@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC <img src="https://wafid.co/wp-content/uploads/2020/02/Language-Learning-Tips-and-Tricks.jpg" alt="Koalas" width="900"/>
+# MAGIC <img src="https://images.app.goo.gl/YVCzoe229tSUYAxU7" width="900"/>
 
 # COMMAND ----------
 
