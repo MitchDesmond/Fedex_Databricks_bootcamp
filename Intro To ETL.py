@@ -1,4 +1,9 @@
 # Databricks notebook source
+#fix head line
+# add create database
+
+# COMMAND ----------
+
 # MAGIC %md # Intro to Databricks Export Transflorm Load (ETL)
 # MAGIC
 # MAGIC This tutorial covers the following steps:
@@ -227,12 +232,17 @@ df.isna().any()
 
 # COMMAND ----------
 
+# MAGIC %sql
+# MAGIC create schema if not exists hive_metastore.products_md
+
+# COMMAND ----------
+
 spark_df = spark.createDataFrame(df)
 
 # COMMAND ----------
 
-print("Delta table where data will be saved " + save_metadata_location)
+print("Delta table where data will be saved " + save_data_location)
 
 # COMMAND ----------
 
-df.write.mode("overwrite").saveAsTable(save_metadata_location + ".output_data")
+spark_df.write.mode("overwrite").saveAsTable(save_data_location + ".output_data")
