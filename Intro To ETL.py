@@ -1,10 +1,5 @@
 # Databricks notebook source
-#fix head line
-# add create database
-
-# COMMAND ----------
-
-# MAGIC %md # Intro to Databricks Export Transflorm Load (ETL)
+# MAGIC %md # Intro to Databricks Export Transform Load (ETL)
 # MAGIC
 # MAGIC This tutorial covers the following steps:
 # MAGIC - Import data from your local machine into the Databricks File System (DBFS)
@@ -156,7 +151,7 @@ df.rename(columns=lambda x: x.replace(' ', '_'), inplace=True)
 
 # COMMAND ----------
 
-data.head()
+df.head()
 
 # COMMAND ----------
 
@@ -246,3 +241,9 @@ print("Delta table where data will be saved " + save_data_location)
 # COMMAND ----------
 
 spark_df.write.mode("overwrite").saveAsTable(save_data_location + ".output_data")
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC --cleanup to remove work database
+# MAGIC drop database hive_metastore.products_md
